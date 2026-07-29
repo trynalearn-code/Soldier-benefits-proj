@@ -13,8 +13,8 @@ async function createRecord(soldierData){
     return result.tostring()
 }
 
-async function getRecord(){
-    return await welfareRepo.getRecord()
+async function getRecord(soldierId){
+    return await welfareRepo.getRecord(soldierId)
 }
 
 async function updateSoldier(soldierData) {

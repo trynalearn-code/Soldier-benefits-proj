@@ -40,7 +40,7 @@ router.get("/soldiers/:soldierId/benefits", async (req, res)=>{
     try {
         return res.status(200).json({
             success:true,
-            data:welfareService.getRecord()
+            data:welfareService.getRecord(req.params.soldierId)
         })
     } catch (error) {
         console.error(error)

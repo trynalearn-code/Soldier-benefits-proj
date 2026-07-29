@@ -6,8 +6,8 @@ async function createRecord(soldierData) {
     return await welfareRecord.insertOne(soldierData)
 }
 
-async function getRecord(){
-    return await welfareRecord.find()
+async function getRecord(soldierId){
+    return await welfareRecord.find(soldierId)
 }
 
 async function updateSoldier(soldierData) {
