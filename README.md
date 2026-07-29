@@ -23,12 +23,10 @@ Soldier-Benefits-proj
     README.md
     server.js
 
-
 ## How we split up the databases
 
-We decided to use MongoDB for the Welfare Record, as it is backed by a history of pediods. 
-Since the BenefitPeriod is 
-
+We decided to use MongoDB for the Welfare Record, as it is backed by a history of pediods.
+Since the BenefitPeriod is an array, it would make the most sense to use MongoDB, as SQL doesn't take arrays well.
 
 ### Installing Instructions
 
