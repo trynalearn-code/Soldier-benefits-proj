@@ -26,7 +26,10 @@ Soldier-Benefits-proj
 ## How we split up the databases
 
 We decided to use MongoDB for the Welfare Record, as it is backed by a history of pediods.
-Since the BenefitPeriod is an array, it would make the most sense to use MongoDB, as SQL doesn't take arrays well.
+Since the BenefitPeriod is an array, it would make the most sense to use MongoDB, as SQL isn't fitting with arrays.
+
+Budget Allocation, on the other hand, has a key that is used by Spend Transaction as a Foreign Key.
+Supabase/SQL works great with those, so we'll use Supabase instead of MongoDB for these entities.
 
 ### Installing Instructions
 
