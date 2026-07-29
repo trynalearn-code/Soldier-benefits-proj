@@ -14,12 +14,22 @@ Soldier-Benefits-proj
         mongodb.js
         supabase.js
     repositories
+        |
+        welfareRepo.js
     routes
+        |
+        welfareRouter.js
     services
+        |
+        welfareService.js
     tests
+        |
+        repo.test.js
+        service.test.js
     .env
     .gitignore
     docker-compose-.yaml
+    Dockerfile
     README.md
     server.js
 

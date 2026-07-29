@@ -7,7 +7,11 @@ async function createRecord(soldierData) {
 }
 
 async function getRecord(){
-    return await soldiers.find()
+    return await welfareRecord.find()
 }
 
-export default {getRecord, createRecord}
+async function updateSoldier(soldierData) {
+    return await welfareRecord.insertOne(soldierData)
+}
+
+export default {getRecord, createRecord, updateSoldier}

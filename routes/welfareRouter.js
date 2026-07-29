@@ -1,24 +1,30 @@
 import {Router} from "express"
-import welfareRepo from "../repositories/welfareRepo.js"
-
+// import welfareRepo from "../repositories/welfareRepo.js"
+import welfareService from "../services/welfareService.js"
 
 const router = Router()
 
 router.post("/soldiers/:soldierId/benefits", async (req, res)=>{
     try {
-    if (req.params.soldierId === insertedId) {
+    if (req.params.soldierId === welfareService.insertedId) {
         return res.status(409).json({
             success:false,
             message:"an active welfare record already exists for the soldier"
         })
     }
+    let BenefitPeriod=[{
+        startDate: req.body.startDate ||new Date().toISOString(),
+        endDate: req.body.endDate || null,
+        decisionReason:req.body.decisionReason,
+        budgetApproved:req.body.budgetApproved
+    }]
       return res.status(201).json({
         success:true,
-        data:{id:_id,
+        data:{id:welfareService.insertedId,
             soldierId:req.params.id,
             unit:req.body.unit,
             currentbenefitType:req.body.currentbenefitType,
-            history:BenefitPeriod[{startDate: new Date().toISOString(), }]
+            history:BenefitPeriod
         }
       }) 
     } catch (error) {
@@ -34,7 +40,7 @@ router.get("/soldiers/:soldierId/benefits", async (req, res)=>{
     try {
         return res.status(200).json({
             success:true,
-            data:welfareRepo.getRecord()
+            data:welfareService.getRecord()
         })
     } catch (error) {
         console.error(error)

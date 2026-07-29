@@ -1,4 +1,4 @@
-import welfareRepo from "./repositories/xrepo";
+import welfareRepo from "../repositories/welfareRepo.js";
 
 async function createRecord(soldierData){
     const newSoldier = {
@@ -14,5 +14,11 @@ async function createRecord(soldierData){
 }
 
 async function getRecord(){
-    return await soldiersRepo.getRecord()
+    return await welfareRepo.getRecord()
 }
+
+async function updateSoldier(soldierData) {
+    return await welfareRepo.updateSoldier()
+}
+
+export default {createRecord, getRecord, updateSoldier}
