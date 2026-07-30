@@ -54,15 +54,25 @@ router.get("/budget", async (req, res)=>{
     }
 })
 
-router.get("/budget/:id/transactions", (req, res)=>{
-async function getTask(SupabaseClient, id) {
-  const { data, error } = await SupabaseClient.from('tasks').select('*').eq('id', id)
-  if (error) throw error
-  return Response.json({ data })}
+router.get("/budget/:id/transactions", async (req, res)=>{
+    if (method === 'GET' && pathname === '/budget'){
+    const { data, error } = await SupabaseClient.from('Budget Allocation').select('*').eq('id', id)
+    if (error) throw error
+    return Response.json({ data })}
 })
 
 router.post("/budget/:id/spend", (req, res)=>{
-    
+    if (method === 'POST' && pathname === '/budget'){
+        const { data, error } = await SupabaseClient.from('Budget Allocation').select('*').eq('id', id)
+        const {result} = budgetRepo.getBudget()
+        if (result.allocatedAmount>req.amount){
+            return res.status(409).json({
+                error:"Your amount can't be greater than your allocatedAmount",
+                remainingAmount:result.remainingAmount
+            })
+        }
+
+    }
 })
 
 export default router
