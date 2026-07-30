@@ -75,7 +75,18 @@ describe("Welfare Benefits", ()=>{
 describe("Budget Entity", ()=>{
     describe("create budget", ()=>{
         it("makes a new allocation", ()=>{
-            expect(createBudget())
+            expect(createBudget({
+            "unit":"duvdevan",
+            "benefitType":"giftCard",
+            "month":"2004-05",
+            "allocatedAmount":57
+        })).toBe({
+            "id":"_id",
+            "unit":"duvdevan",
+            "benefitType":"giftCard",
+            "month":"2004-05",
+            "allocatedAmount":57           
+        })
         })
     })
 })
