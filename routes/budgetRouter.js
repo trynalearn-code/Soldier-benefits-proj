@@ -61,7 +61,7 @@ router.get("/budget/:id/transactions", async (req, res)=>{
     return Response.json({ data })}
 })
 
-router.post("/budget/:id/spend", (req, res)=>{
+router.post("/budget/:id/spend", async (req, res)=>{
     if (method === 'POST' && pathname === '/budget'){
         const { data, error } = await SupabaseClient.from('Budget Allocation').select('*').eq('id', id)
         const {result} = budgetRepo.getBudget()
