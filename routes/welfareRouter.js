@@ -20,7 +20,7 @@ router.post("/soldiers/:soldierId/benefits", async (req, res)=>{
       return res.status(201).json({
         success:true,
         data:{id:welfareService.insertedId,
-            soldierId:req.params.id,
+            soldierId:req.path.id,
             unit:req.body.unit,
             currentbenefitType:req.body.benefitType,
             history:BenefitPeriod
@@ -39,7 +39,7 @@ router.get("/soldiers/:soldierId/benefits", async (req, res)=>{
     try {
         return res.status(200).json({
             success:true,
-            data:welfareService.getRecord(req.params.soldierId)
+            data:welfareService.getRecord(req.path.soldierId)
         })
     } catch (error) {
         console.error(error)
@@ -65,19 +65,6 @@ router.patch("/soldiers/:soldierId/benefits", async (req, res)=>{
     }
 })
 
-router.post("/budget", async (req, res)=>{
-    try {
-        return res.status(200).json({
-            success:true,
-            data:req.body
-        })
-    } catch (error) {
-        console.error(error)
-        return res.status(404).json({
-            success:false,
-            data:""
-        })
-    }
-})
+
 
 export default router
