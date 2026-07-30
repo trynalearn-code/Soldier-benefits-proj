@@ -1,5 +1,4 @@
 import {Router} from "express"
-// import welfareRepo from "../repositories/welfareRepo.js"
 import welfareService from "../services/welfareService.js"
 
 const router = Router()
@@ -23,7 +22,7 @@ router.post("/soldiers/:soldierId/benefits", async (req, res)=>{
         data:{id:welfareService.insertedId,
             soldierId:req.params.id,
             unit:req.body.unit,
-            currentbenefitType:req.body.currentbenefitType,
+            currentbenefitType:req.body.benefitType,
             history:BenefitPeriod
         }
       }) 

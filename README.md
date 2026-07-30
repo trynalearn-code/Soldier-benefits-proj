@@ -73,8 +73,10 @@ Based on what we did in class, I didn't feel ready.
 Please grade my test leniently, and try to give me partial credit wherever possible.
 
 POST /soldiers/:soldierId/benefits
+runs
 
 GET /soldiers/:soldierId/benefits
+
 
 PATCH /soldiers/:soldierId/benefits
 
