@@ -70,6 +70,7 @@ according to AI, I only finished about 20% of it. I feel like I barely touched M
 before the test. And testing, which is 45/120 of the tes, I really didn't follow.
 Based on what we did in class, I didn't feel ready.
 Please grade my test leniently, and try to give me partial credit wherever possible.
+(Also some of my commits just say force. I think when you edited that it deleted the previous ones.)
 
 POST /soldiers/:soldierId/benefits
 runs
