@@ -19,3 +19,19 @@ services:
 
 volumes:
   postgres_data:
+  db:
+  ports:
+    - ${3000}:${3000}
+  container_name: supabase-db
+  services:
+  local_dev_atlas:
+    image: mongodb/mongodb-atlas-local:8.0
+    hostname: local_dev_atlas
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+      - config:/data/configdb
+volumes:
+  - data:
+  - config:
