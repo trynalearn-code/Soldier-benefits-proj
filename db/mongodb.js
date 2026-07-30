@@ -7,6 +7,6 @@ await client.connect()
 
 const db = client.db("soldiers")
 
-console.log("connected to MongoDb!")
+console.log("We've connected to MongoDb!")
 
 export default db
