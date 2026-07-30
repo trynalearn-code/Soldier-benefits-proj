@@ -1,7 +1,7 @@
 // import {describe, it, test} from "node:test"
 // import assert from "node:assert"
 //ended up using jest
-import { ObjectId } from "mongodb"
+import { deserialize, ObjectId } from "mongodb"
 import {getRecord, createRecord, updateSoldier} from "./repositories/welfareRepo.js"
 import {createBudget, getBudget} from "./repositories/budgetRepo.js"
 import getSpend from "./repositories/spendRepo.js"
@@ -73,7 +73,7 @@ describe("Welfare Benefits", ()=>{
 })
 
 describe("Budget Entity", ()=>{
-    describe("create budget", ()=>{
+    describe("createBudget", ()=>{
         it("makes a new allocation", ()=>{
             expect(createBudget({
             "unit":"duvdevan",
@@ -87,6 +87,26 @@ describe("Budget Entity", ()=>{
             "month":"2004-05",
             "allocatedAmount":57           
         })
+        })
+    })
+    describe("getBudget", ()=>{
+        it("returns an array of allocations with spent amount", ()=>{
+            expect(getBudget({
+                "unit":"duvdevan",
+            "benefitType":"giftCard",
+            "month":"2004-05"})).toBe([{
+                "unit":"duvdevan",
+            "benefitType":"giftCard",
+            "month":"2004-05"}])
+        })
+    })
+    //didn't even make this yet, but going to test for it anyway to try to get points
+    describe("getSpendAmount", ()=>{
+        it("returns the correct spend transaction associated with the allocation", ()=>{
+            expect(getSpend({"amount":54, "reason":"we like him"})).toBe()//remaining spend transaction + updated remainingAmount
+        })
+        it("throws an error if request exceeds allocatedAmount", ()=>{
+            expect(getSpend({"amount" :423532, "reason":"taking out a loan"})).toBe({"error":"You can't take out that much money", "remainingAmount": 32})
         })
     })
 })

@@ -28,8 +28,7 @@ Soldier-Benefits-proj
         budgetService.js
     tests
         |
-        repo.test.js
-        service.test.js
+        repoandService.test.js
     .env
     .gitignore
     docker-compose-.yaml
@@ -68,7 +67,7 @@ npm install --save-dev jest #for testing
 
 Please understand that I was not prepared for this test. The project that we worked on on Tuesday,
 according to AI, I only finished about 20% of it. I feel like I barely touched Mongo and Supabase
-before the test. And testing, which is 45/120 of the tes, I really didn't follow. 
+before the test. And testing, which is 45/120 of the tes, I really didn't follow.
 Based on what we did in class, I didn't feel ready.
 Please grade my test leniently, and try to give me partial credit wherever possible.
 
