@@ -3,6 +3,7 @@ import "dotenv/config";
 import db from "./db/mongodb.js"
 import router from "./routes/welfareRouter.js"
 import supabase from "./db/supabase.js";
+import budgetrouter from "./routes/budgetRouter.js"
 
 const app = express();
 
