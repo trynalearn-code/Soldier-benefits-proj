@@ -76,14 +76,19 @@ POST /soldiers/:soldierId/benefits
 runs
 
 GET /soldiers/:soldierId/benefits
-
+seems to be a bug in the code
 
 PATCH /soldiers/:soldierId/benefits
+not running as planned
 
 POST /budget
+seems to work, but not storing
 
 GET /budget
+claims to succeed but no data
 
 GET /budget/:id/transactions
+didn't get this far
 
 POST /budget/:id/spend
+didn't get to this
